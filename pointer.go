@@ -64,7 +64,7 @@ func (p Pointer) Tail() Pointer {
 // escaped         = "~" ( "0" / "1" )
 //   ; representing '~' and '/', respectively
 func parse(str string) (Pointer, error) {
-	if len(str) == 0 {
+	if len(str) == 0 || str == "/" {
 		return Pointer{}, nil
 	}
 
